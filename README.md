@@ -1,16 +1,14 @@
 # mug_manager
 
-A new Flutter project.
+A mug manager, allowing for adding, updating and deleting mugs from a backend service.
 
-## Getting Started
+## Getting started
 
-This project is a starting point for a Flutter application.
+To start the mock backend, launch Docker and start the Imposter implementation.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+open -a Docker
+imposter up -p 8080 --config path/to/imposter
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Then, start the application by running `main.dart`.
