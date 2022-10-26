@@ -1,0 +1,20 @@
+plugin: openapi
+specFile: mug.yaml
+
+resources:
+- method: GET
+  path: /mug
+  response:
+    scriptFile: mug.js
+- method: POST
+  path: /mug
+  response:
+    scriptFile: mug.js
+- method: PUT
+  path: /mug/:mugId
+  response:
+    scriptFile: mug.js
+- method: DELETE
+  path: /mug/:mugId
+  response:
+    scriptFile: mug.js

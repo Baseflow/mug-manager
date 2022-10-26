@@ -1,0 +1,129 @@
+openapi: 3.0.3
+info:
+  title: Swagger MugManager - OpenAPI 3.0
+  description: |-
+    This is a sample Mug Manager Server based on the OpenAPI 3.0 specification.
+  version: '1.0'
+servers:
+  - url: 'http://localhost:8080'
+tags:
+  - name: mug
+    description: Everything about Mugs
+paths:
+  /mug:
+    post:
+      tags:
+        - mug
+      summary: Add a new mug to the database
+      description: Add a new mug to the database
+      operationId: addMug
+      requestBody:
+        description: Create a new mug in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mug'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mug'
+        '405':
+          description: Invalid input
+    get:
+      tags:
+        - mug
+      summary: Get all mugs
+      description: Get all mugs
+      operationId: readMugs
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mug'
+  /mug/{mugId}:
+    put:
+      tags:
+        - mug
+      summary: Update an existing mug
+      description: Update an existing mug by id
+      operationId: updateMug
+      parameters:
+        - name: mugId
+          in: path
+          description: ID of mug to update
+          required: true
+          schema:
+            type: number
+            format: int64
+      requestBody:
+        description: Update an existing mug in the database
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mug'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mug'
+    delete:
+      tags:
+        - mug
+      summary: Delete a mug
+      description: delete a mug
+      operationId: deleteMug
+      parameters:
+        - name: mugId
+          in: path
+          description: ID of mug to delete
+          required: true
+          schema:
+            type: number
+            format: int64
+      responses:
+        '204':
+          description: Mug deleted successfully
+components:
+  schemas:
+    Mug:
+      type: object
+      properties:
+        id:
+          type: number
+          format: int64
+          default: 123456789
+          description: 'Unique identifier'
+        first_name:
+          type: string
+          default: 'Jeroen'
+          description: 'The first name of the person this mug belongs to'
+        last_name:
+          type: string
+          default: 'Weener'
+          description: 'The last name of the person this mug belongs to'
+        nickname:
+          type: string
+          default: ''
+          description: 'An optional nickname for the person this mug belongs to'
+        is_broken:
+          type: boolean
+          default: false
+          description: 'Whether the mug is broken'
+  requestBodies:
+    Mug:
+      description: Mug object that needs to be added to the database
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Mug'
