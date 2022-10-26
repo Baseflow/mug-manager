@@ -14,12 +14,25 @@ class MugDisplayView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<MugDisplayCubit, MugDisplayState>(
-        builder: ((context, state) {
-          return ListView(
-            children: state.mugs.map((mug) => MugListItem(mug: mug)).toList(),
-          );
-        }),
+      body: Column(
+        children: [
+          const Text(
+            'Mug manager',
+            style: TextStyle(
+              fontSize: 24,
+            ),
+          ),
+          BlocBuilder<MugDisplayCubit, MugDisplayState>(
+            builder: ((context, state) {
+              return Expanded(
+                child: ListView(
+                  children:
+                      state.mugs.map((mug) => MugListItem(mug: mug)).toList(),
+                ),
+              );
+            }),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.read<MugDisplayCubit>().createMug(
