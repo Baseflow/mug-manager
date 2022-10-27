@@ -4,8 +4,8 @@ import 'package:mug_manager/core/services/mug_service.dart';
 import '../../../../core/models/mug.dart';
 import 'mug_display_state.dart';
 
-class MugDisplayCubit extends Cubit<MugDisplayState> {
-  MugDisplayCubit({
+class MugCubit extends Cubit<MugDisplayState> {
+  MugCubit({
     required this.mugService,
   }) : super(const MugDisplayState(mugs: []));
 
