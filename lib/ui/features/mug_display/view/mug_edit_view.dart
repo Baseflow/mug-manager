@@ -6,12 +6,12 @@ import 'package:mug_manager/ui/shared/widgets/checkbox_form_field.dart';
 import '../../../../core/models/mug.dart';
 
 class MugEditView extends StatefulWidget {
-  MugEditView({
+  const MugEditView({
     super.key,
     required this.mug,
   });
 
-  Mug mug;
+  final Mug mug;
 
   @override
   MugEditViewState createState() {
