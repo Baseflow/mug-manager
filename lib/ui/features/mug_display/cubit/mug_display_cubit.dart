@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mug_manager/core/services/mug_service.dart';
 
@@ -12,7 +13,12 @@ class MugCubit extends Cubit<MugDisplayState> {
   final MugService mugService;
 
   Future<void> initialize() async {
-    getMugs();
+    try {
+      await getMugs();
+    } on DioError {
+      throw Exception(
+          'Communication error. Is Imposter running on localhost:8080?');
+    }
   }
 
   Future<void> createMug({

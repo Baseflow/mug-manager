@@ -8,6 +8,7 @@
             "name": "mug_manager",
             "request": "launch",
             "type": "dart",
+            "program": "lib/main.dart"
         },
         {
             "name": "mug_manager (profile mode)",
