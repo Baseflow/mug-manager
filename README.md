@@ -1,6 +1,6 @@
 # mug_manager
 
-A mug manager, allowing for adding, updating and deleting mugs from a backend service.
+A Flutter mug manager application. Contains Imposter config files for spinning up a mock backend that the application can connect to.
 
 ## Getting started
 
