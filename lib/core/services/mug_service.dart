@@ -1,5 +1,5 @@
 import 'package:mug_manager/core/repositories/mug_repository.dart';
-import 'package:mug_manager/data/repositories/http_mug_repository.dart';
+import 'package:mug_manager/data/http/repositories/http_mug_repository.dart';
 
 import '../models/mug.dart';
 

@@ -23,7 +23,8 @@ class MugListItem extends StatelessWidget {
         ),
       ),
       title: Text(
-          '${mug.firstName} ${mug.nickName != null ? '\'${mug.nickName}\'' : ''} ${mug.lastName} ${mug.isBroken ? '💀' : ''}'),
+        '${mug.firstName} ${mug.nickName != null ? '\'${mug.nickName}\'' : ''} ${mug.lastName}${mug.isBroken ? ' 💀' : ''}',
+      ),
       trailing: IconButton(
           onPressed: () => context.read<MugCubit>().deleteMug(mugId: mug.id),
           icon: const Icon(Icons.delete)),

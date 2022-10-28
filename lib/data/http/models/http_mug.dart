@@ -1,4 +1,4 @@
-import '../../core/models/mug.dart';
+import '../../../core/models/mug.dart';
 
 class HttpMug extends Mug {
   HttpMug.fromMug(Mug mug)

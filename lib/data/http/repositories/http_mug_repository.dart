@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:mug_manager/core/repositories/mug_repository.dart';
-import 'package:mug_manager/data/models/http_mug.dart';
+import 'package:mug_manager/data/http/models/http_mug.dart';
 
-import '../../core/models/mug.dart';
+import '../../../core/models/mug.dart';
 
 class HttpMugRepository implements MugRepository {
   const HttpMugRepository({

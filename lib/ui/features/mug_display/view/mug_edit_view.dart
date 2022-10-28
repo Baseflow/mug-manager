@@ -53,6 +53,7 @@ class MugEditViewState extends State<MugEditView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               TextFormField(
+                key: const Key('FIRST_NAME'),
                 controller: _firstNameController,
                 decoration: const InputDecoration(labelText: 'First name'),
                 validator: (value) {
@@ -64,6 +65,7 @@ class MugEditViewState extends State<MugEditView> {
               ),
               const SizedBox(height: 24),
               TextFormField(
+                key: const Key('LAST_NAME'),
                 controller: _lastNameController,
                 decoration: const InputDecoration(labelText: 'Last name'),
                 validator: (value) {
@@ -75,6 +77,7 @@ class MugEditViewState extends State<MugEditView> {
               ),
               const SizedBox(height: 24),
               TextFormField(
+                key: const Key('NICKNAME'),
                 controller: _nickNameController,
                 decoration: const InputDecoration(labelText: 'Nickname'),
               ),
