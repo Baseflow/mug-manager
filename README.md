@@ -1,5 +1,7 @@
 # mug_manager
 
+This repository is the result of a [Baseflow blog post](https://www.baseflow.com/blogs/managing-mugs-decoupling-frontend-and-backend-development).
+
 A Flutter mug manager application. Contains Imposter config files for spinning up a mock backend that the application can connect to.
 
 ## Getting started
